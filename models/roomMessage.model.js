@@ -5,7 +5,7 @@ const roomMessageSchema = new mongoose.Schema({
     type: String,
     required: [true, "Room name is required"],
     trim: true,
-    unique: [true, "Room name is already taken"],
+    unique: false,  // Burada `unique: true` silinib
   },
   from: {
     type: String,
@@ -24,3 +24,4 @@ const roomMessageSchema = new mongoose.Schema({
 });
 
 export const RoomMessage = mongoose.model("RoomMessage", roomMessageSchema);
+
